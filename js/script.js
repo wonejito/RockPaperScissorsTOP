@@ -8,13 +8,24 @@ function getComputerChoice() {
     return "paper";
   }
 }
-
-let paper
-
 // let playerSelection = prompt(/Rock, Scissors or Paper?: /i);
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == 'paper' && computerSelection == 'scissors') {
-    return 'pierdes'
-  } else if (playerSelection == '')
+  if (playerSelection == "paper" && computerSelection == "scissors") {
+    return "pierdes";
+  } else if (playerSelection == "paper" && computerSelection == "rock") {
+    return "ganas";
+  } else if (playerSelection == "rock" && computerSelection == "paper") {
+    return "ganas";
+  } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    return "ganas";
+  } else if (playerSelection == "scissors" && computerSelection == "rock") {
+    return "pierdes";
+  } else if (playerSelection == "scissors" && computerSelection == "paper") {
+    return "ganas";
+  }
 }
+
+let playerSelection = "rock";
+let computerSelection = getComputerChoice();
+let roto = playRound(playerSelection, computerSelection);

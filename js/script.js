@@ -10,24 +10,27 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == "piedra" && computerSelection == "papel") {
-    let result = "Perdiste";
-  } else if (playerSelection == "piedra" && computerSelection == "tijeras") {
-    let result = "Ganaste";
-  } else if (playerSelection == "papel" && computerSelection == "tijeras") {
-    let result = "Perdiste";
-  } else if (playerSelection == "papel" && computerSelection == "piedra") {
-    let result = "Ganaste";
-  } else if (playerSelection == "tijeras" && computerSelection == "papel") {
-    let result = "Ganaste";
-  } else if (playerSelection == "tijeras" && computerSelection == "piedra") {
-    let result = "Perdiste";
+  if (playerSelection == computerSelection) {
+    let result = "Creo que es un empate";
   } else {
-    let result = "EMPATE";
+    if (playerSelection == "piedra" && computerSelection == "papel") {
+      let result = "Pierdes";
+    } else if (playerSelection == "piedra" && computerSelection == "tijeras") {
+      let result = "Ganas";
+    } else if (playerSelection == "papel" && computerSelection == "tijeras") {
+      let result = "Pierdes";
+    } else if (playerSelection == "papel" && computerSelection == "piedra") {
+      let result = "Ganas";
+    } else if (playerSelection == "tijeras" && computerSelection == "papel") {
+      let result = "Ganas";
+    } else {
+      let result = "Piedes";
+      return result;
+    }
   }
-  return result;
 }
 
+let ramiro = "ramiron";
 const playerSelection = "piedra";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));

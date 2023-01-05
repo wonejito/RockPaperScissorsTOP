@@ -23,17 +23,23 @@ function playRound(playerSelection, computerSelection) {
         retorno = "Scissors beats paper";
     } else if (playerSelection == "scissors" && computerSelection == "rock") {
         retorno = "Scissors are too weak to win a fight with rock";
+    } else if (
+        (playerSelection && computerSelection != "paper") ||
+        "rock" ||
+        "scissos"
+    ) {
+        retorno = "What the fuck is that?";
     }
 
     return retorno;
 }
 
-const playerSelection = getComputerChoice();
-const computerSelection = getComputerChoice();
-//console.log(playRound(playerSelection, computerSelection)); //
-
 function game() {
     for (i = 0; i < 5; i++) {
+        let playerSelection = prompt("Whats your choice?: ").toLowerCase();
+        let computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
     }
 }
+
+game();

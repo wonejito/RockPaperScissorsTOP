@@ -26,7 +26,7 @@ function playRound(playerSelection, computerSelection) {
   } else if (
     (playerSelection && computerSelection != "paper") ||
     "rock" ||
-    "scissos"
+    "scissors"
   ) {
     retorno = "What the fuck is that?";
   }
@@ -34,23 +34,37 @@ function playRound(playerSelection, computerSelection) {
   return retorno;
 }
 
-//let buttons = document.querySelectorAll("button");
+let paper = document.querySelector("#paper");
 let rock = document.querySelector("#rock");
-let scissors = document.querySelector("#scissors");
-let paper = document.querySelector("paper");
+let scissor = document.querySelector("#scissor");
+let tablon = document.querySelector("#tablon");
 
-paper.addEventListener("click", playRound);
-rock.addEventListener("click", playRound);
-scissors.addEventListener("click", playRound);
+paper.addEventListener("click", function () {
+  let computerSelection = getComputerChoice();
+  let result = playRound("paper", computerSelection);
+  tablon.textContent = result;
+});
 
-//////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////
+rock.addEventListener("click", function () {
+  let computerSelection = getComputerChoice();
+  let result = playRound("rock", computerSelection);
+  tablon.textContent = result;
+});
+
+scissor.addEventListener("click", function () {
+  let computerSelection = getComputerChoice();
+  let result = playRound("scissor", computerSelection);
+  tablon.textContent = result;
+});
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 // function game() {
-//     for (i = 0; i < 5; i++) {
-//         let playerSelection = prompt("Whats your choice?: ").toLowerCase();
-//         let computerSelection = getComputerChoice();
-//         console.log(playRound(playerSelection, computerSelection));
-//     }
+//   for (i = 0; i < 5; i++) {
+//     let playerSelection = prompt("Whats your choice?: ").toLowerCase();
+//     let computerSelection = getComputerChoice();
+//     console.log(playRound(playerSelection, computerSelection));
+//   }
 // }
 
 // game();

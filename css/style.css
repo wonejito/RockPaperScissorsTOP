@@ -17,3 +17,20 @@ button {
   border: 8px solid green;
   font-size: 50px;
 }
+
+#contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px;
+}
+
+#tablon {
+  border: 12px solid brown;
+  height: 200px;
+  aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}

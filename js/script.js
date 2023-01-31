@@ -13,28 +13,30 @@ function getComputerChoice() {
 
 let playerPoints = 0;
 let computerPoints = 0;
+let paper = "paper";
+let rock = "rock";
+let scissors = "scissors";
 function playRound(playerSelection, computerSelection) {
-  let paper = "paper";
-  let rock = "rock";
-  let scissors = "scissors";
-  let result;
-  if (playerSelection == paper && computerSelection == rock) {
+  if (
+    (playerSelection == paper && computerSelection == rock) ||
+    (playerSelection == rock && computerSelection == scissors) ||
+    (playerSelection == scissors && computerSelection == paper)
+  ) {
     result = `${playerSelection} beats ${computerSelection}`;
     playerPoints++;
-  } else if (playerSelection == paper && computerSelection == scissors) {
+  } else if (playerSelection == computerSelection) {
+    result = `${playerSelection} es lo mismo que ${computerSelection}`;
+  } else {
     result = `${computerSelection} beats ${playerSelection}`;
     computerPoints++;
-  } else if (playerSelection == rock && computerSelection == paper) {
-    result = `${computerPoints} beats ${playerSelection}`;
-    computerPoints++;
-  } else if (playerSelection == rock && computerSelection == scissors) {
-    result = `${playerSelection} beats ${computerSelection}`;
-    playerPoints++;
-  } else if (playerSelection == scissors && computerSelection == rock) {
-    result = `${computerSelection} beats ${playerSelection}`;
-    computerPoints++;
-  } else if (playerSelection == scissors && computerSelection == paper) {
-    result = `${playerSelection} beats ${computerSelection}`;
-    playerPoints++;
+
+    // result = `${playerSelection} & ${computerSelection} son lo mismo`;
   }
+  // let puntos = `Player: ${playerPoints} | Computer: ${computerPoints}`;
+  return result;
 }
+computerSelection = getComputerChoice();
+playerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
+// let puntos = `Player: ${playerPoints} | Computer: ${computerPoints}`;
+// console.log(puntos);

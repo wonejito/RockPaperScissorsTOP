@@ -48,12 +48,13 @@ button {
   width: 500px;
   margin-top: 8px;
 }
-#whoiswinnig {
+#board {
   flex-grow: 1;
   border: 2px solid gray;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 #score {
   flex-grow: 1;

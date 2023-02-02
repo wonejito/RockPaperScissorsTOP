@@ -12,7 +12,7 @@ body {
   font-size: larger;
 }
 
-#rsp-btns {
+#rspbtns {
   display: flex;
   /* border: 5px solid red; */
   justify-content: center;
@@ -22,7 +22,7 @@ body {
   width: auto;
   gap: 16px;
 }
-#rsp-btns button {
+#rspbtns button {
   height: 150;
   width: 200px;
   font-size: 25px;

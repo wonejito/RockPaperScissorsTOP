@@ -48,6 +48,14 @@ let playerpoints = document.querySelector("#playerpoints");
 let computerpoints = document.querySelector("#computerpoints");
 let botones = document.querySelectorAll(".toton");
 
+function resetGame() {
+  computerPoints = 0;
+  playerPoints = 0;
+  computerpoints.textContent = 0;
+  playerpoints.textContent = 0;
+  board.textContent = "";
+}
+
 let computerPoints = 0;
 let playerPoints = 0;
 botones.forEach((boton) => {
@@ -66,6 +74,13 @@ botones.forEach((boton) => {
     } else {
       computerpoints.textContent;
       playerpoints.textContent;
+    }
+    if (playerPoints == 5) {
+      board.textContent = "Player Wins!!!";
+      setTimeout(resetGame, 3000);
+    } else if (computerPoints == 5) {
+      board.textContent = "Computer Wins :(((";
+      setTimeout(resetGame, 3000);
     }
   });
 });

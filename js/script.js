@@ -50,12 +50,23 @@ let botones = document.querySelectorAll(".toton");
 
 let computerPoints = 0;
 let playerPoints = 0;
-
 botones.forEach((boton) => {
   boton.addEventListener("click", function () {
     computerSelection = getComputerChoice();
-    playerSelection = this.textContent;
+    playerSelection = this.id;
     board.textContent = playRound(playerSelection, computerSelection);
+    if (board.textContent == `${playerSelection} beats ${computerSelection}`) {
+      playerPoints = playerPoints + 1;
+      playerpoints.textContent = playerPoints;
+    } else if (
+      board.textContent == `${computerSelection} beats ${playerSelection}`
+    ) {
+      computerPoints = computerPoints + 1;
+      computerpoints.textContent = computerPoints;
+    } else {
+      computerpoints.textContent;
+      playerpoints.textContent;
+    }
   });
 });
 

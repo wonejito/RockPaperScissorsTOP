@@ -50,6 +50,7 @@ button {
 }
 #board {
   flex-grow: 1;
+  flex-shrink: 0;
   border: 2px solid gray;
   display: flex;
   flex-direction: column;
@@ -58,6 +59,7 @@ button {
 }
 #score {
   flex-grow: 1;
+  flex-shrink: 0;
   border: 2px solid grey;
   display: flex;
   flex-direction: column;
